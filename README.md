@@ -18,7 +18,10 @@ using the included python poc
 
 Either build the jar on your host with `mvn clean compile assembly:single`
 
-Or use `docker` to build an image with `docker build -t log4jpwn .`
+Or use `docker` to build an image with `docker build -t log4jpwn .` 
+  If you get a mounting error related to cgroup, this is the workaround: 
+  - do mkdir /sys/fs/cgroup/systemd
+  - do mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 
 ## run
 
